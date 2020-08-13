@@ -22,3 +22,40 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## users テーブル
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| nickname | string | null: false |
+| email | string | null: false |
+| password | string | null: false |
+| mentor | boolean | default: false | 
+
+### Association
+- has_one :profile
+- has_many :orders
+
+## Profiles テーブル
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| title | string | null: false |
+| self_introduction | text | null: false |
+| price | integer | null: false |
+| user | references | null: false foreign_key: true | 
+
+### Association
+- belongs_to :user
+- has_many :orders
+
+## Orders テーブル
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| user | references | null: false, foreign_key: true |
+| profile | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :profile
+
+# ER図
+https://app.diagrams.net/#G1TH0gVvOrAMPlFco-psHXl8zEPZ7nliQu
