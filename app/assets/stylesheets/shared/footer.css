@@ -1,0 +1,12 @@
+.top-page-footer {
+  width: 100vw;
+  height: 10vh;
+  background-color: powderblue;
+  text-align: center;
+}
+
+.footer-content {
+  padding-top: 20px;
+  color: gray;
+  font-size: 15px;
+}
