@@ -81,15 +81,25 @@
 
 .user-nickname {
   text-decoration: none;
+  line-height: 32px;
   margin-right: 3vw;
-  color: #333333;
+  color: #13bac0;
+  background-color: #ffffff;
+  border-radius: 40px;
+  padding: 10px;
   font-weight: bold;
 }
 
 
 .logout {
   text-decoration: none;
-  color: #333333;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #13bac0;
+  background-color: #ffffff;
+  border-radius: 40px;
+  padding: 10px;
+  font-weight: bold;
 }
 
 .login {

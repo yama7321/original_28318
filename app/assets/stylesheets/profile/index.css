@@ -1,0 +1,62 @@
+.top-page-main {
+  background-color: #f4f8fa;
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contents-wrapper {
+  width: 70vw;
+  height: 65vh;
+  background-color: #f4f8fa;
+  display: grid;
+  gap: 26px;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  margin-bottom: 50px;
+}
+
+.content {
+  background-color: lightgreen;
+  
+}
+.info1 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+}
+
+.mentor-photo {
+  background-color: lightseagreen;
+  width: 100px;
+  height: 100px;
+}
+
+.title-sentence {
+  background: lightskyblue;
+  width: calc(100% - 110px);
+  height: 100px;
+}
+
+.info2 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: calc(100% - 100px);
+  background: #000;
+}
+
+.mentor-name {
+  width: 70%;
+  height: 100%;
+  background-color: limegreen;
+}
+
+.mentor-price {
+  width: 30%;
+  height: 100%;
+  background-color: maroon;
+}
