@@ -1,0 +1,83 @@
+<div class="items-sell-contents">
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">メンター情報を登録します</h2>
+    <%= form_with model: @profile, url: profiles_path, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="title-wrapper">
+      <div class="weight-bold-text">
+        タイトル
+      </div>
+      <div class="title-explanation">
+        提供できる内容をわかりやすく記載しましょう
+      </div>
+      <%= f.text_area :title, class:"items-text", placeholder:"プログラミング的思考についてはお任せください！", maxlength:"40" %>
+    </div>
+
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        顔写真
+      </div>
+      <div class="click-upload">
+        <p>
+          顔写真を登録してください
+        </p>
+        <%= f.file_field :image %>
+      </div>
+    </div>
+
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        スライド
+      </div>
+      <div class="click-upload">
+        <p>
+          特徴を表すスライドを掲載しましょう
+        </p>
+        <%= f.file_field :slide %>
+      </div>
+    </div>
+
+
+
+
+
+      <div class="self-introduction-wrapper">
+        <div class="weight-bold-text">
+          自己紹介
+        </div>
+        <%= f.text_area :self_introduction, class:"items-text", placeholder:"プログラミング的思考についてはお任せください！" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+
+    <%# /商品名と商品説明 %>
+
+    <%# 販売価格 %>
+    <div class="sell-price">
+      <div class="weight-bold-text question-text">
+        <span>契約金額</span>
+      </div>
+      <div>
+        <div class="price-content">
+          
+          <div class="price-right">
+            <div class="price-text">
+              <span>金額</span>
+            </div>
+            <span class="sell-yen">¥</span>
+            <%= f.text_field :price, class:"price-input", placeholder:"例）300",id:"item_price" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%# /販売価格 %>
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "登録する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+  </footer>
+</div>
