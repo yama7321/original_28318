@@ -1,0 +1,38 @@
+<div class="top-page-main">
+  <div class="contents-wrapper">
+    
+    <% @profiles.each do |profile| %>
+      <div class="content">
+        <div class="info1">
+          <div class="mentor-image-content">
+            <% if profile.image != nil %>
+            <%= image_tag profile.image.variant(resize_to_fill: [100,100]).processed, class:"mentor-image" %>
+            <% end %>
+          </div>
+          <div class="info1-right">
+            <div class="mentor-name">
+              <div class="mentor-name-box">
+                <%= link_to profile.user.nickname, profile_path(profile) %>
+              </div>
+            </div>
+            <div class="mentor-price">
+              <div class="mentor-price-box">
+                メンター契約料  ￥<%= profile.price %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mentor-title">
+          <div class="mentor-title-box">
+            <%= profile.title %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+    <div class="pagination" >
+      <%= paginate @profiles %>
+    </div>
+
+</div>
