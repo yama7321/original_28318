@@ -6,7 +6,11 @@
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in?  %>
-        <li><%= link_to "メンター登録はこちら", new_profile_path, class:"new-mentor-link" %></li>
+        <% if current_user.mentor == true %>
+          <li><%= link_to "メンター情報編集", edit_profile_path(current_user.profile), class:"new-mentor-link" %></li>
+        <% else %>
+          <li><%= link_to "メンター登録はこちら", new_profile_path, class:"new-mentor-link" %></li>
+        <% end %>
         <li><%= link_to "#{current_user.nickname}さん", "#", class: "user-nickname" %></li>
         <li><%= link_to 'ログアウト', destroy_user_session_path , method: :delete, class: "logout" %></li> 
       <% else %>
