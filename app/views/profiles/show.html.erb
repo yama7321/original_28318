@@ -1,0 +1,59 @@
+<div class="items-sell-contents">
+  <div class="items-sell-main">
+
+
+    <div class="top-wrapper">
+      <div class="top-left">
+        <div class="top-image">
+            <% if @profile.image != nil %>
+              <%= image_tag @profile.image.variant(resize_to_fill: [100,100]).processed, class:"mentor-image" %>
+            <% end %>
+        </div>
+      </div>
+      <div class="top-right">
+        <div class="top-name">
+          <div class="nickname-box">
+          <%= @profile.user.nickname %>
+          </div>
+        </div>
+        <div class="top-title">
+          <div class="title-box">
+          <%= @profile.title %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="middle-wrapper">
+      <% if @profile.slide != nil %>
+        <%= image_tag @profile.slide.variant(resize_to_fill: [600,350]).processed %>
+      <% end %>
+    </div>
+
+
+    <div class="bottom-wrapper">
+      <%= simple_format(@profile.self_introduction) %>
+    </div>
+
+    <div class="price-wrapper">
+      <div class="price-title">
+        メンター契約料
+      </div>
+      <div class="price-main">
+        ￥<%= @profile.price %>
+      </div>
+    </div>
+
+
+
+    
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= link_to "契約画面に進む", "#" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+
+  </footer>
+</div>

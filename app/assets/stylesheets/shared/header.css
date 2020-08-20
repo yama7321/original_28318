@@ -123,3 +123,9 @@
   padding: 10px;
   font-weight: bold;
 }
+
+.new-mentor-link {
+  margin-right: 15px;
+  font-size: 15px;
+  color: lightseagreen;
+}
