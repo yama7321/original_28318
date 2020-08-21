@@ -105,6 +105,41 @@
 
 }
 
+.chat-wrapper{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.chat-p{
+  width: 140px;
+  margin-top: 3px;
+  font-size: 15px;
+  color: #13b4a1;
+}
+
+.chat-btn{
+  display: flex;
+  width: 210px;
+  background: #ffffff;
+  border:none;
+  border-radius: 40px;
+  color: #fff;
+  line-height: 40px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 4vh 0;
+  text-align: center;
+  justify-content: center;
+  border: 3px solid #13bac0 ;
+}
+
+.chat-logo{
+  margin-top: 6px;
+  width: 30px;
+  height: 30px;
+}
+
 .price-title {
   width: 60%;
   height: 100%;
@@ -354,3 +389,4 @@
 .inc {
   font-size: 13px;
 }
+
