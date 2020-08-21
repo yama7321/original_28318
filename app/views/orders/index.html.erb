@@ -1,0 +1,80 @@
+<div class='transaction-contents'>
+  <div class='transaction-main'>
+    <h1 class='transaction-title-text'>
+      契約内容をご確認ください
+    </h1>
+    <%# 購入内容の表示 %>
+    <div class='buy-item-info'>
+      <%= image_tag @profile.image, class: 'buy-item-img' %>
+      <div class='buy-item-right-content'>
+        <h2 class='buy-item-text'>
+          <%= @profile.user.nickname %>
+        </h2>
+        <div class='buy-item-price'>
+          <p class='item-price-text'><%= @profile.title %></p>
+        </div>
+      </div>
+    </div>
+    <%# /購入内容の表示 %>
+
+    <%# 支払額の表示 %>
+    <div class='item-payment'>
+      <h1 class='item-payment-title'>
+        メンター契約料
+      </h1>
+      <p class='item-payment-price'>
+        ¥<%= @profile.price %>
+      </p>
+    </div>
+    <%# /支払額の表示 %>
+
+
+
+    <%= form_with model: @order, url: profile_orders_path, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+    <% if @order != nil %>
+      <%= render 'shared/error_messages', model: f.object %>
+    <% end %>
+
+    <%# カード情報の入力 %>
+    <div class='credit-card-form'>
+      <h1 class='info-input-haedline'>
+        クレジットカード情報を入力してください
+      </h1>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">カード情報</label>
+        </div>
+        <%= f.text_field :number, class:"input-default", placeholder:"カード番号(半角英数字)", maxlength:"16" %>
+        <div class='available-card'>
+          <%= image_tag 'card-visa.gif', class: 'card-logo'%>
+          <%= image_tag 'card-mastercard.gif', class: 'card-logo'%>
+          <%= image_tag 'card-jcb.gif', class: 'card-logo'%>
+          <%= image_tag 'card-amex.gif', class: 'card-logo'%>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">有効期限</label>
+        </div>
+        <div class='input-expiration-date-wrap'>
+          <%= f.text_area :exp_month, class:"input-expiration-date", placeholder:"例)3" %>
+          <p>月</p>
+          <%= f.text_area :exp_year, class:"input-expiration-date", placeholder:"例)23" %>
+          <p>年</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">セキュリティコード</label>
+        </div>
+        <%= f.text_field :cvc,class:"input-default", placeholder:"カード背面4桁もしくは3桁の番号", maxlength:"4" %>
+      </div>
+    </div>
+    <%# /カード情報の入力 %>
+    
+    <div class='buy-btn'>
+      <%= f.submit "メンター契約する" ,class:"buy-green-btn" %>
+    </div>
+    <% end %>
+  </div>
+</div>

@@ -48,8 +48,6 @@ class ProfilesController < ApplicationController
     end
   end
   
-  
-  
   private
   def profile_params
     params.require(:profile).permit(:title, :image, :slide, :self_introduction, :price).merge(user_id: current_user.id)
