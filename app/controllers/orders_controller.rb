@@ -9,7 +9,6 @@ class OrdersController < ApplicationController
     if @order.valid?
       pay_order
       @order.save
-      return redirect_to root_path
     else
       render 'index'
     end
