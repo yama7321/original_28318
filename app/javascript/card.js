@@ -30,7 +30,7 @@ const pay = () => {
         document.getElementById("charge-form").submit();
         document.getElementById("charge-form").reset();
       } else {
-        alert('カード情報が間違っています')
+        alert('カード情報が間違っています');
         location.reload();
       }
     });

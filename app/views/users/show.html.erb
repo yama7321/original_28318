@@ -1,0 +1,26 @@
+<div class="my-page-wrapper">
+  <div class="my-page-main">
+<div class="user-name-wrapper">
+  <h1 class="my-page-font">ユーザー名</h1>
+  <div class="my-page-user-name">
+    <%= current_user.nickname %>
+  </div>
+</div>
+<div class="email-wrapper">
+  <h1 class="my-page-font">メールアドレス</h1>
+  <div class="my-page-user-name">
+    <%= current_user.email %>
+  </div>
+</div>
+<div class="order-history-wrapper">
+  <h1 class="my-page-font">契約履歴</h1>
+  <% @orders.each do |order| %>
+    <div class="order-history">
+      <div class="order-mentor"><%= link_to order.profile.user.nickname, profile_path(order.profile) %></div>
+      <div class="order-price">￥<%= order.profile.price %></div>
+      <div class="order-created"><%= l order.created_at %></div>
+    </div>
+  <% end %>
+</div>
+  </div>
+</div>
