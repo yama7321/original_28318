@@ -11,6 +11,22 @@
   height: 80vh;
 }
 
+.rooms {
+  background-color: #fff;
+  height: calc(80vh);
+  padding: 0 20px;
+  overflow: scroll;
+}
+
+.room {
+  padding: 20px 0 40px;
+}
+
+.room-name a{
+  text-decoration: none;
+  color: #13bac0;
+  font-size: 20px;
+}
 
 .chat {
   background-color: #ffffff;

@@ -1,0 +1,10 @@
+<div class="rooms">
+  <% current_user.rooms.each do |room| %>
+    <div class="room">
+      <div class="room-name">
+        <% @another_user = (room.users.where.not(id: current_user.id).to_a)[0] %>
+        <a href="#"><%= @another_user.nickname %></a>
+      </div>
+    </div>
+  <% end %>
+</div>
