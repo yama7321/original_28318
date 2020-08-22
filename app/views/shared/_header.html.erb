@@ -12,6 +12,11 @@
           <li><%= link_to "メンター登録はこちら", new_profile_path, class:"new-mentor-link" %></li>
         <% end %>
         <li><%= link_to "#{current_user.nickname}さん", user_path(current_user), class: "user-nickname" %></li>
+
+        <%= link_to "#" do %>
+        <li><%= link_to "チャット",rooms_path, class:"user-nickname"  %></li>
+        <% end %>
+
         <li><%= link_to 'ログアウト', destroy_user_session_path , method: :delete, class: "logout" %></li> 
       <% else %>
         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
