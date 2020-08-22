@@ -3,7 +3,7 @@
     <div class="room">
       <div class="room-name">
         <% @another_user = (room.users.where.not(id: current_user.id).to_a)[0] %>
-        <a href="#"><%= @another_user.nickname %></a>
+        <%= link_to @another_user.nickname, room_messages_path(room) %>
       </div>
     </div>
   <% end %>

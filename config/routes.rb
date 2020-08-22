@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :profiles do
     resources :orders, only: [:index, :create]
   end
-  resources :messages
-  resources :rooms
+  resources :rooms do
+    resources :messages
+  end
 end
