@@ -42,9 +42,16 @@
       <div class="price-main">
         ￥<%= @profile.price %>
       </div>
+      
     </div>
-
-
+    <div class="chat-wrapper">
+    <%= link_to(rooms_path(user_ids: [current_user.id, @profile.user.id]), method: :post) do %>
+      <div class="chat-btn">
+        <div class="chat-p">チャットで相談する</div>
+          <%= image_tag 'chat.png', class: 'chat-logo'%>
+        </div>
+      </div>
+    <% end %>
 
     
     <%# 下部ボタン %>

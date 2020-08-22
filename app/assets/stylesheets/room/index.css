@@ -1,0 +1,4 @@
+.right-background {
+  width: calc(100vw - 300px);
+  background-color: #fafafa;
+}

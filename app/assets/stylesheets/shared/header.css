@@ -82,7 +82,7 @@
 .user-nickname {
   text-decoration: none;
   line-height: 32px;
-  margin-right: 3vw;
+  margin-right: 20px;
   color: #13bac0;
   background-color: #ffffff;
   border-radius: 40px;
@@ -125,7 +125,8 @@
 }
 
 .new-mentor-link {
-  margin-right: 15px;
+  margin-right: 25px;
   font-size: 15px;
   color: lightseagreen;
 }
+
