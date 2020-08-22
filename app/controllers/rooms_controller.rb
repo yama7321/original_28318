@@ -1,5 +1,10 @@
 class RoomsController < ApplicationController
 
+  def index
+    
+  end
+  
+
   def new
     @room = Room.new
   end
@@ -9,11 +14,7 @@ class RoomsController < ApplicationController
     @room.save(validate: false)
     redirect_to room_messages_path(@room)
   end
-
-
-
   
-
   private
   def room_params
     params.permit(user_ids: [])
