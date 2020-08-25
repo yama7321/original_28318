@@ -12,5 +12,7 @@
   </div>
   <%= f.submit '送信', class: 'form-submit' %>
 <% end %>
-
-<script src="scroll.js"></script>
+<script type="text/javascript">
+  const $scrollAuto = $('.messages');
+  $scrollAuto.animate({scrollTop: ($scrollAuto[0].scrollHeight + 500)}, 'fast')
+</script>
