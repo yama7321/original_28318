@@ -1,6 +1,11 @@
 class ProfilesController < ApplicationController
   def index
-    @profiles = Profile.all.order('created_at DESC').page(params[:page]).per(10)
+    if params[:sort]
+      @profiles = Profile.all.order(params[:sort]).page(params[:page]).per(10)
+      render :index
+    else
+      @profiles = Profile.all.order('created_at DESC').page(params[:page]).per(10)
+    end
   end
 
   def new
