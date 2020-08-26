@@ -5,7 +5,7 @@ a {
 .top-page-main {
   background-color: #f4f8fa;
   width: 100vw;
-  height: 80vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,8 @@ a {
 
 .contents-wrapper {
   width: 70vw;
-  height: 65vh;
+  margin-top: 60px;
+  min-height: 65vh;
   background-color: #f4f8fa;
   display: grid;
   gap: 26px;
@@ -109,3 +110,4 @@ a {
   font-size: 18px;
 }
 
+.sort

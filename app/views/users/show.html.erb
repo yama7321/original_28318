@@ -16,9 +16,21 @@
   <h1 class="my-page-font">契約履歴</h1>
   <% @orders.each do |order| %>
     <div class="order-history">
-      <div class="order-mentor"><%= link_to order.profile.user.nickname, profile_path(order.profile) %></div>
-      <div class="order-price">￥<%= order.profile.price %></div>
+      <div class="order-mentor">
+        <% if order.status == true %>
+          <div class="order-now">契約中</div>
+        <% end %>
+        <%= link_to order.profile.user.nickname, profile_path(order.profile) %>
+      </div>
+      <div class="order-price">￥<%= order.profile.price %> /月</div>
       <div class="order-created"><%= l order.created_at %></div>
+      <div class="delete-box">
+        <% if order.status == true %>
+          <div class="order-delete"><%= link_to "解約する", profile_order_path(id: order.id, profile_id: order.profile.id), method: :delete, class:"cancel-button" %></div>
+        <% else %>
+          <div class="order-delete cancelled">解約済み</div>
+        <% end %>
+      </div>
     </div>
   <% end %>
 </div>

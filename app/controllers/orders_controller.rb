@@ -14,6 +14,16 @@ class OrdersController < ApplicationController
     end
     
   end
+
+  def destroy
+    @order = Order.find(params[:id])
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    subscription = Payjp::Subscription.retrieve(@order.subscription_id)
+    subscription.delete
+    @order.status = false
+    @order.save!
+    redirect_to user_path(current_user)
+  end
   
   
   private
@@ -23,11 +33,23 @@ class OrdersController < ApplicationController
   
   def pay_order
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-    Payjp::Charge.create(
+    # Payjp::Charge.create(
+    #   amount: @order.profile.price,
+    #   card: order_params[:token],
+    #   currency: 'jpy'
+    # )
+    customer = Payjp::Customer.create(card: params[:token])
+    plan = Payjp::Plan.create(
       amount: @order.profile.price,
-      card: order_params[:token],
+      interval: 'month',
       currency: 'jpy'
     )
+    subscription = Payjp::Subscription.create(
+      customer: customer.id,
+      plan: plan.id
+    )
+    @order.status = true
+    @order.subscription_id = subscription.id
   end
   
 end
