@@ -1,9 +1,14 @@
 <div class="top-page-main">
+  
+    <%= form_tag(controller: "profiles", action: "index") do %>
+      <div class="sort">
+      <%= select_tag :sort, options_for_select("新着順": "id desc", "登録順": "id asc", "価格の高い順": "price desc", "価格の安い順": "price asc"),include_blank: true%>
+      </div>
+      <div class="sort-btn">
+        <%= submit_tag("並べ替える") %>
+      </div>
+    <% end %>
   <div class="contents-wrapper">
-    <div class="sort">
-      <p>並び替え</p>
-      <%= select_tag :change, options_for_select("価格の高い順": "price asc","価格の安い順": "price desc","新しい順": "id asc","古い順": "id desc"), include_blank: true %>
-    </div>
     <% @profiles.each do |profile| %>
       <div class="content">
         <div class="info1">
