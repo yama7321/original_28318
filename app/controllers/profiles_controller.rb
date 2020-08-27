@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
     if params[:sort] && params[:sort] != "orders.count asc"
       @profiles = Profile.all.order(params[:sort]).page(params[:page]).per(10)
       render :index
-    elsif params[:sort]
+    elsif params[:sort] 
       array = Profile.all.sort { |a,b| b.orders.count <=> a.orders.count }
       @profiles = Kaminari.paginate_array(array).page(params[:page]).per(10)
       render :index
@@ -30,6 +30,8 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
+    @review = Review.new
+    @reviews = @profile.reviews.includes(:user).order(created_at: :desc).limit(10)
   end
 
   def edit

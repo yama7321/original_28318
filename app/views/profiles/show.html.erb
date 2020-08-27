@@ -60,7 +60,35 @@
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
-  </div>
 
+    <div class="reviews">
+      <h2>〈　レビュー 一覧　〉 </h2>
+      <% if @reviews %>
+        <% @reviews.each do |review| %>
+          <p>
+            <div class="reviewer">
+              <strong><%=review.user.nickname%></strong>
+              <%= "　⭐️" * review.valuation %>
+            </div>
+            <div class="review-message">
+              <%= review.content %>
+            </div>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="send-review">
+      <%= form_with(model: [@profile, @review], local: true) do |form| %>
+        <%= form.text_area :content, placeholder: "コメントを入力してください", rows: "2" ,class:"review-content"%>
+        <div class="review-valuation">
+        <%= form.select :valuation, [['⭐️⭐️⭐️⭐️⭐️',5],['⭐️⭐️⭐️⭐',4],['⭐️⭐️⭐️',3],['⭐️⭐️',2],['⭐️',1]] %>
+        <%= form.submit "レビューする", class:"review-btn" %>
+        </div>
+      <% end %>
+    </div>
+
+
+  </div>
   </footer>
 </div>

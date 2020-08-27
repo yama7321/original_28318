@@ -390,3 +390,64 @@
   font-size: 13px;
 }
 
+.send-review {
+  margin-top: 100px;
+}
+
+.review-content {
+  width: 100%;
+  margin: 5px 0 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
+
+.review-btn {
+  background-color: #fff;
+  border-radius: 20px;
+  color: #13bac0;
+  border: 0;
+  font-size: 15px;
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  font-weight: bolder;
+  cursor: pointer;
+  border:1px solid powderblue;
+  margin: 0 10px;
+}
+
+.review-valuation {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.review-valuation select {
+  width: 100px;
+  border: none;
+}
+
+.reviews {
+  margin-top: 50px;
+}
+
+.reviews h2 {
+  color: #13bac0;
+  font-size: 20px;
+  font-family: fantasy;
+}
+
+.reviewer {
+  font-size: 20px;
+  color: gray;
+  margin-top: 10px;
+}
+
+.review-message {
+  font-size: 18px;
+  color: gray;
+  width: 90%;
+  margin: 0 auto;
+}
