@@ -180,3 +180,8 @@ a {
   height: 25px;
   cursor: pointer;
 }
+
+.order-count {
+  color: gray;
+  text-align: center;
+}

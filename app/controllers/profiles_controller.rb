@@ -1,7 +1,11 @@
 class ProfilesController < ApplicationController
   def index
-    if params[:sort]
+    if params[:sort] && params[:sort] != "orders.count asc"
       @profiles = Profile.all.order(params[:sort]).page(params[:page]).per(10)
+      render :index
+    elsif params[:sort]
+      array = Profile.all.sort { |a,b| b.orders.count <=> a.orders.count }
+      @profiles = Kaminari.paginate_array(array).page(params[:page]).per(10)
       render :index
     else
       @profiles = Profile.all.order('created_at DESC').page(params[:page]).per(10)

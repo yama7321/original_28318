@@ -2,7 +2,7 @@
   
     <%= form_tag(controller: "profiles", action: "index") do %>
       <div class="sort">
-      <%= select_tag :sort, options_for_select("新着順": "id desc", "登録順": "id asc", "価格の高い順": "price desc", "価格の安い順": "price asc"),include_blank: true%>
+      <%= select_tag :sort, options_for_select("新着順": "id desc", "登録順": "id asc", "価格の高い順": "price desc", "価格の安い順": "price asc", "契約数順": "orders.count asc"),include_blank: true%>
       </div>
       <div class="sort-btn">
         <%= submit_tag("並べ替える") %>
@@ -27,6 +27,9 @@
               <div class="mentor-price-box">
                 メンター契約料  ￥<%= profile.price %> /月
               </div>
+              <div class="order-count">
+              🤝 <%= profile.orders.count %>
+              </div>
             </div>
           </div>
         </div>
@@ -38,9 +41,7 @@
       </div>
     <% end %>
   </div>
-
     <div class="pagination" >
       <%= paginate @profiles %>
     </div>
-
 </div>
