@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update, :destroy]
   resources :profiles do
     resources :orders, only: [:index, :create, :destroy]
+    resources :reviews, only: [:create, :destroy]
   end
   resources :rooms do
     resources :messages
