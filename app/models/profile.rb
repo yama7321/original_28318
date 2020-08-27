@@ -3,6 +3,7 @@ class Profile < ApplicationRecord
   has_many :orders
   has_one_attached :image
   has_one_attached :slide
+  has_many :reviews
 
   with_options presence: true do
     validates :title
