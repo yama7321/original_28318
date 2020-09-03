@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ユーザー名
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_me: 次回から自動的にログイン
+      profile:
+        title: タイトル
+        self_introduction: 自己紹介文
+        price: 契約金額
+        image: 顔写真
+        slide: スライド
