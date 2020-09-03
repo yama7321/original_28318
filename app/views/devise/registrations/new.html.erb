@@ -5,7 +5,9 @@
       会員情報を登録します
     </h1>
   </div>
-  
+
+    <%= render 'shared/error_messages', model: f.object %>
+
   <div class="form-group">
     <%= f.text_area :nickname, class:"input-default", placeholder:"ユーザー名", maxlength:"40" %>
   </div>

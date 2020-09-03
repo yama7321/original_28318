@@ -29,6 +29,7 @@ a {
   background-color: #13b1c0;
   width: calc(35vw - 26px);
   height: calc(32vh - 26px);
+  max-height: 250px;
   box-shadow: 0 10px 25px 0 lightgray;
 }
 .info1 {
@@ -70,7 +71,7 @@ a {
 
 .mentor-name-box {
   text-align: center;
-  font-size: 30px;
+  font-size: 2vw;
   color: #13b1c0;
 }
 
@@ -91,6 +92,7 @@ a {
 .mentor-price-box {
   text-align: center;
   color: gray;
+  font-size: 1.3vw;
 }
 
 .mentor-title {
@@ -98,8 +100,9 @@ a {
   justify-content: space-between;
   width: 100%;
   height: calc(100% - 150px);
+  max-height: 100px;
   background: #fff;
-  isplay: flex;
+  display: flex;
   justify-content: center;
   flex-direction: column;
   padding-bottom: 10px;
@@ -108,7 +111,7 @@ a {
 .mentor-title-box {
   text-align: center;
   color: gray;
-  font-size: 18px;
+  font-size: 1.3vw;
 }
 
 .sort {
@@ -183,10 +186,10 @@ a {
 
 .order-count {
   margin-top: 5px;
-  margin-left: 70px;
-  width: 200px;
+  width: 100%;
+  text-align: center;
   color: gray;
   display: flex;
   justify-content: space-evenly;
-  font-size: 25px;
+  font-size: 1.5vw;
 }

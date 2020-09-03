@@ -64,6 +64,7 @@ gem 'image_processing', '~> 1.2'
 gem 'kaminari' 
 gem 'payjp'
 gem 'stripe'
+gem 'rails-i18n'
 
 group :production do
   gem 'rails_12factor'
