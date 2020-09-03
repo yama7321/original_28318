@@ -37,6 +37,7 @@ Things you may want to cover:
 - has_many :room_users
 - has_many :rooms, through: room_users
 - has_many :messages
+- has_many :reviews
 
 ## Profiles テーブル
 | Column   | Type   | Options     |
@@ -49,6 +50,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - has_many :orders
+- has_many :reviews
 
 ## Orders テーブル
 | Column   | Type   | Options     |
@@ -96,6 +98,17 @@ Things you may want to cover:
 
 - belongs_to :room
 - belongs_to :user
+
+## reviews テーブル
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| content | text  | null: false |
+| user | references | null: false, foreign_key: true|
+| profile | references | null: false, foreign_key: true|
+| valuation | integer  | null: false |
+
+- belongs_to :user
+- belongs_to :profile
 
 # ER図
 https://app.diagrams.net/#G1TH0gVvOrAMPlFco-psHXl8zEPZ7nliQu

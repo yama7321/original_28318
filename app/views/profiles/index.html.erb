@@ -28,7 +28,20 @@
                 メンター契約料  ￥<%= profile.price %> /月
               </div>
               <div class="order-count">
-              🤝 <%= profile.orders.count %>
+                <div>
+                  🤝 <%= profile.orders.count %>
+                </div>
+                <div>
+                  ⭐️ <% if profile.reviews.length > 0 %>
+                  <% sum = 0 %>
+                  <% profile.reviews.each do |review| %>
+                  <% sum += review.valuation %>
+                  <% end %>
+                  <%= sprintf("%.1f",sum.to_f / profile.reviews.length) %>
+                  <% else %>
+                  0
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
