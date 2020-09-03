@@ -9,7 +9,6 @@ class ReviewsController < ApplicationController
     else
       flash[:alert] = 'レビューを投稿するにはコメントを入力してください'
       redirect_to profile_path(@review.profile.id)
-      
     end
   end
 
