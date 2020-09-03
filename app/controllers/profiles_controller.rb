@@ -1,4 +1,7 @@
 class ProfilesController < ApplicationController
+
+  before_action :authenticate_user!, except: :index
+
   def index
     if params[:sort] && params[:sort] != "orders.count asc"
       @profiles = Profile.all.order(params[:sort]).page(params[:page]).per(10)

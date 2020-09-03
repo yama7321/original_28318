@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+
+  before_action :authenticate_user!
+
   def create
     Review.create(review_params)
     redirect_to profile_path(params[:profile_id])

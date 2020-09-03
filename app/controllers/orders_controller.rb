@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
 
+  before_action :authenticate_user!
+
   def index
     @profile = Profile.find(params[:profile_id])
   end
