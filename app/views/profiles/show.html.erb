@@ -45,6 +45,9 @@
       
     </div>
 
+  
+  <% if current_user %> 
+
     <div class="chat-wrapper">
       <%= link_to(rooms_path(user_ids: [current_user.id, @profile.user.id]), method: :post) do %>
         <div class="chat-btn">
@@ -60,6 +63,8 @@
       <%=link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
+
+  <% end %>
 
     <div class="reviews">
       <h2>〈　レビュー 一覧　〉 </h2>
@@ -78,6 +83,8 @@
       <% end %>
     </div>
 
+  <% if current_user %>
+
     <div class="send-review">
       <%= form_with(model: [@profile, @review], local: true) do |form| %>
         <%= form.text_area :content, placeholder: "コメントを入力してください", rows: "2" ,class:"review-content"%>
@@ -87,6 +94,8 @@
         </div>
       <% end %>
     </div>
+
+  <% end %>
 
 
   </div>
