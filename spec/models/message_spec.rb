@@ -1,5 +1,33 @@
 require 'rails_helper'
 
 RSpec.describe Message, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#create" do
+    before do
+      @message = FactoryBot.build(:message)
+      @message.image = fixture_file_upload("public/rails.png")
+    end
+
+    it "contentとimageが存在していれば保存できること" do
+      expect(@message).to be_valid
+    end
+    
+    it "contentが存在していれば保存できること" do
+      @message.image = nil
+      expect(@message).to be_valid
+    end
+    
+    it "imageが存在していれば保存できること" do
+      @message.content = nil
+      expect(@message).to be_valid
+    end
+    
+    it "contentとimageの両方が空では保存できないこと" do
+      @message.content = nil
+      @message.image = nil
+      @message.valid?
+      expect(@message.errors.full_messages).to  include("Content can't be blank")
+    end
+    
+  end
+  
 end
