@@ -47,7 +47,7 @@
     </div>
 
   
-  <% if current_user %> 
+  <% if current_user && current_user != @profile.user %> 
 
     <div class="chat-wrapper">
       <%= link_to(rooms_path(user_ids: [current_user.id, @profile.user.id]), method: :post) do %>
@@ -84,7 +84,7 @@
       <% end %>
     </div>
 
-  <% if current_user %>
+  <% if current_user && current_user != @profile.user %>
 
     <div class="send-review">
       <%= form_with(model: [@profile, @review], local: true) do |form| %>
