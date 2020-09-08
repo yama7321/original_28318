@@ -36,11 +36,12 @@
 ## 　　
 
 ## 🔐利用方法
-### **https://original-28318.herokuapp.com/**にログイン
+### **https://original-28318.herokuapp.com/** にログイン
 ### Basic認証を入力
 | Basic認証 | ユーザー名 | パスワード |
 |-----------|------------|------------|
 || nickname | anonymous |
+
 
 ### ログイン
 |テストユーザー|メールアドレス|パスワード|
