@@ -10,7 +10,7 @@
 ### メンターを探す
 <P>メンター一覧から、メンターを探すことができます。契約金額順や契約数順で並び替えることもできます。<br>メンターの名前をクリックすると、詳細画面が表示されます。レビューをみることもできます。</p>
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/68151784/92427798-6b0d2c00-f1c8-11ea-9124-b3327f923bf1.gif" title="readme1" width="700px" height="">
+  <img src="https://user-images.githubusercontent.com/68151784/92428605-84af7300-f1ca-11ea-9159-056438d85501.gif">
 </div>
 
 
