@@ -7,14 +7,23 @@
  ### **https://original-28318.herokuapp.com/**
 
 ## アプリ機能
-### メンターを探す
+### 🔍メンターを探す
 <P>メンター一覧から、メンターを探すことができます。契約金額順や契約数順で並び替えることもできます。<br>メンターの名前をクリックすると、詳細画面が表示されます。レビューをみることもできます。</p>
 <div align="center">
   <img src="https://user-images.githubusercontent.com/68151784/92428605-84af7300-f1ca-11ea-9159-056438d85501.gif">
 </div>
 
+### 🤝契約する
+<p>気に入ったメンターを見つけたら、そのメンターと契約することができます。<br>契約状況は、ユーザーの登録情報のページで確認できます。</p>
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/68151784/92429083-defd0380-f1cb-11ea-9f6d-0804d5e4cc87.gif">
+</div>
 
-
+### ✉️相談する
+<p>契約したメンターとチャットでやりとりすることができます。画像も送信できます。</p>
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/68151784/92429333-8da14400-f1cc-11ea-8eef-7c32fc5588c9.gif">
+</div>
 
 
 
