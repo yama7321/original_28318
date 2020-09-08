@@ -302,4 +302,6 @@
 - belongs_to :profile
 
 # ER図
-https://app.diagrams.net/#G1TH0gVvOrAMPlFco-psHXl8zEPZ7nliQu
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/68151784/92455068-331fdc00-f1fc-11ea-8f2d-9c00bf296dba.png">
+</div>
