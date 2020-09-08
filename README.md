@@ -1,10 +1,14 @@
 <div align="center">
   <img src="https://user-images.githubusercontent.com/68151784/92426827-d7d2f700-f1c5-11ea-9352-a5e58445aaba.png" title="original_logo">
 </div>
-<p align="center">不安な子どものプログラミン教育で、いつでも相談できる先生を探せるアプリ</p>
+<p align="center">不安な子どものプログラミング教育で、いつでも相談できる先生を探せるアプリ</p>
+
+##　　 
 
 ## 🚩 アプリURL
  ### **https://original-28318.herokuapp.com/**
+
+##　　
 
 ## アプリ機能
 ### 🔍メンターを探す
@@ -13,11 +17,15 @@
   <img src="https://user-images.githubusercontent.com/68151784/92428605-84af7300-f1ca-11ea-9159-056438d85501.gif">
 </div>
 
+## 　　
+
 ### 🤝契約する
 <p>気に入ったメンターを見つけたら、そのメンターと契約することができます。<br>契約状況は、ユーザーの登録情報のページで確認できます。</p>
 <div align="center">
   <img src="https://user-images.githubusercontent.com/68151784/92429083-defd0380-f1cb-11ea-9f6d-0804d5e4cc87.gif">
 </div>
+
+## 　　
 
 ### ✉️相談する
 <p>契約したメンターとチャットでやりとりすることができます。画像も送信できます。</p>
@@ -25,7 +33,7 @@
   <img src="https://user-images.githubusercontent.com/68151784/92429333-8da14400-f1cc-11ea-8eef-7c32fc5588c9.gif">
 </div>
 
-
+## 　　
 
 
 ## users テーブル
