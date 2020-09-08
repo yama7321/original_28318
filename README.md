@@ -45,6 +45,15 @@
 |テストユーザー|メールアドレス|パスワード|
 || test@gmail.com | test111 |
 
+## 　　
+
+## 目指した課題解決
+<p>今年の4月から小学校のプログラミング教育が必修になりました。幼少期からIT教育を受けさせることはとても良いことだと思いますが、現場では不安の声も大きいようです。<br>そこで、いつでも相談できるメンターを探せるアプリがあれば安心してIT教育に取り組めるのではないかと考えました。</p>
+<div align="center">
+  <img src="src="//www.slideshare.net/slideshow/embed_code/key/3ZSZFiJxWtqqzg">
+</div>
+
+
 ## 🖥開発環境
 - Ruby
 - Ruby on Rails
@@ -55,6 +64,7 @@
 - AWS
 - Visual Studio Code
 - Heroku
+
 
 ## 📊テーブル設計
 ### users テーブル
