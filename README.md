@@ -10,7 +10,7 @@
 
 ## 　　
 
-## アプリ機能
+## 💡アプリ機能
 ### 🔍メンターを探す
 <P>メンター一覧から、メンターを探すことができます。契約金額順や契約数順で並び替えることもできます。<br>メンターの名前をクリックすると、詳細画面が表示されます。レビューをみることもできます。</p>
 <div align="center">
@@ -35,8 +35,29 @@
 
 ## 　　
 
+## 🔐利用方法
+### **https://original-28318.herokuapp.com/**にログイン
+### Basic認証を入力
+| Basic認証 | ユーザー名 | パスワード |
+|| nickname | anonymous |
 
-## users テーブル
+### ログイン
+|テストユーザー|メールアドレス|パスワード|
+|| test@gmail.com | test111 |
+
+## 🖥開発環境
+- Ruby
+- Ruby on Rails
+- JavaScript
+- jQuery
+- MySQL
+- GitHub
+- AWS
+- Visual Studio Code
+- Heroku
+
+## 📊テーブル設計
+### users テーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
 | nickname | string | null: false |
@@ -52,7 +73,7 @@
 - has_many :messages
 - has_many :reviews
 
-## Profiles テーブル
+### Profiles テーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
 | title | string | null: false |
@@ -65,7 +86,7 @@
 - has_many :orders
 - has_many :reviews
 
-## Orders テーブル
+### Orders テーブル
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
 | user | references | null: false, foreign_key: true |
@@ -75,7 +96,7 @@
 - belongs_to :user
 - belongs_to :profile
 
-## rooms テーブル
+### rooms テーブル
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
@@ -86,7 +107,7 @@
 - has_many :users, through: room_users
 - has_many :messages
 
-## room_users テーブル
+### room_users テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
@@ -98,7 +119,7 @@
 - belongs_to :room
 - belongs_to :user
 
-## messages テーブル
+### messages テーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |
@@ -111,7 +132,7 @@
 - belongs_to :room
 - belongs_to :user
 
-## reviews テーブル
+### reviews テーブル
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
 | content | text  | null: false |
