@@ -47,8 +47,15 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+# production:
+#   <<: *default
+#   database: original_28318_production
+#   username: original_28318
+#   password: <%= ENV['ORIGINAL_28318_DATABASE_PASSWORD'] %>
+
 production:
   <<: *default
-  database: original_28318_production
-  username: original_28318
-  password: <%= ENV['ORIGINAL_28318_DATABASE_PASSWORD'] %>
+  database: <%= Rails.application.credentials.db[:database] %>
+  username: <%= Rails.application.credentials.db[:username] %>
+  password: <%= Rails.application.credentials.db[:password] %>
+  socket: <%= Rails.application.credentials.db[:socket] %>
