@@ -1,16 +1,17 @@
 class ProfilesController < ApplicationController
-
+# ログインしていないユーザーは一覧、詳細表示以外の機能（メンター契約など）にアクセスできない
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    if params[:sort] && params[:sort] != "orders.count asc"
+    if params[:sort] && params[:sort] != "orders.count asc" # 並べ替えの指定が契約数順以外のとき
       @profiles = Profile.all.order(params[:sort]).page(params[:page]).per(10)
       render :index
-    elsif params[:sort] 
+    elsif params[:sort] # 並べ替えの指定が契約数順のとき
       array = Profile.all.sort { |a,b| b.orders.count <=> a.orders.count }
+      # 配列はそのままページネーションできないのでKaminariのメソッドを適用
       @profiles = Kaminari.paginate_array(array).page(params[:page]).per(10)
       render :index
-    else
+    else # デフォルトの並べ替え(新着順)
       @profiles = Profile.all.order('created_at DESC').page(params[:page]).per(10)
     end
   end
@@ -19,6 +20,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new
   end
 
+  # メンターのプロフィールを作成するとメンターとして登録することになる
   def create
     @profile = Profile.new(profile_params)
     @user = User.find(current_user.id)
