@@ -50,15 +50,18 @@
             </div>
           </div>
         </div>
+
         <div class="mentor-title">
           <div class="mentor-title-box">
             <%= profile.title %>
           </div>
         </div>
+        
       </div>
     <% end %>
   </div>
-    <div class="pagination" >
-      <%= paginate @profiles %>
-    </div>
+
+  <div class="pagination" >
+    <%= paginate @profiles %>
+  </div>
 </div>
