@@ -14,12 +14,14 @@ class Profile < ApplicationRecord
   validate :image_presence
   validate :slide_presence
 
+  # イメージのバリデーション
   def image_presence
     unless image.attached?
       errors.add(:image, 'ファイルを添付してください')
     end
   end
 
+  # スライドのバリデーション
   def slide_presence
     unless slide.attached?
       errors.add(:slide, 'ファイルを添付してください')
