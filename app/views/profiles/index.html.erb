@@ -1,20 +1,22 @@
 <div class="top-page-main">
   
-    <%= form_tag(controller: "profiles", action: "index") do %>
-      <div class="sort">
-      <%= select_tag :sort, options_for_select("新着順": "id desc", "登録順": "id asc", "価格の高い順": "price desc", "価格の安い順": "price asc", "契約数順": "orders.count asc"),include_blank: true%>
-      </div>
-      <div class="sort-btn">
-        <%= submit_tag("並べ替える") %>
-      </div>
-    <% end %>
+  <%# 並べ替えボタン %>
+  <%= form_tag(controller: "profiles", action: "index") do %>
+    <div class="sort">
+    <%= select_tag :sort, options_for_select("新着順": "id desc", "登録順": "id asc", "価格の高い順": "price desc", "価格の安い順": "price asc", "契約数順": "orders.count asc"),include_blank: true%>
+    </div>
+    <div class="sort-btn">
+      <%= submit_tag("並べ替える") %>
+    </div>
+  <% end %>
+    
   <div class="contents-wrapper">
     <% @profiles.each do |profile| %>
       <div class="content">
         <div class="info1">
           <div class="mentor-image-content">
             <% if profile.image != nil %>
-            <%= image_tag profile.image.variant(resize_to_fill: [100,100]).processed, class:"mentor-image" %>
+              <%= image_tag profile.image.variant(resize_to_fill: [100,100]).processed, class:"mentor-image" %>
             <% end %>
           </div>
           <div class="info1-right">
@@ -29,9 +31,11 @@
               </div>
               <div class="order-count">
                 <div>
+                  <%# 契約件数表示 %>
                   🤝 <%= profile.orders.count %>
                 </div>
                 <div>
+                  <%# レビュー評価平均表示 %>
                   ⭐️ <% if profile.reviews.length > 0 %>
                   <% sum = 0 %>
                   <% profile.reviews.each do |review| %>
